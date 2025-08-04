@@ -1,0 +1,76 @@
+restructure_answers_task:
+  description: >
+    Transform a student's raw {answersheet} into a structured JSON array of question-answer pairs using the exam {context} to determine answer boundaries. Use {vlmdesc} to attach diagram or equation descriptions to the corresponding questions when applicable. Your job is to **semantically** match the student-written responses to the most appropriate question, even if the answer appears out of order or under the wrong heading. This includes **multiple-choice questions (MCQs)** and **descriptive questions**.
+  expected_output: |
+    A JSON array of objects, each containing:
+    - "question": The full, verbatim question text from the exam context.
+    - "answer": The student's response, preserved exactly as written, including all text, errors, and ambiguities. Empty string if no response exists for the question.
+    - "diagram_or_equation": Description of diagram or equation related to the student's answer from {vlmdesc}. Empty string if none exists.
+
+    Example Output:
+    ```json
+    [
+      {
+        "question": "1. Which of the following is a renewable resource?\nA. Coal\nB. Petroleum\nC. Solar energy\nD. Natural gas",
+        "answer": "C. Solar energy",
+        "diagram_or_equation": ""
+      },
+      {
+        "question": "2. Mention some features of arid soil.",
+        "answer": "i) Following are the features of arid soil: ii) The colour of the arid soil ranges from red to brown. iii) The arid Soil are generally sandy in texture and saline in nature...",
+        "diagram_or_equation": "Labeled diagram of layered soil profile with 'kankar' at the base"
+      },
+      {
+        "question": "3. What do you understand by Resource?",
+        "answer": "",
+        "diagram_or_equation": ""
+      }
+    ]
+    ```
+
+    Strict Guidelines:
+    - Match answers by meaning, topic, and keywords — **not by position/order in the sheet**.
+    - Handle **MCQs** by preserving the selected option (e.g., "B. Petroleum") as-is.
+    - If a response clearly answers a later question, **move it** to that question.
+    - Assign ambiguous or merged content by best fit — do not discard or split unless necessary.
+    - Use {vlmdesc} to add any available diagram/equation notes to their most likely related question.
+    - Do not modify any part of the student-written answer — preserve errors, typos, formatting, etc.
+    - Return `"answer": ""` only if there's absolutely no matching response.
+    - The final JSON must contain **only the restructured content** with no other commentary or characters.
+  agent: question_restructure_agent
+
+mark_allocation_task:
+  description: >
+    Evaluate the restructured student answers from the previous task against the provided {context} and assign marks for each question. Use the JSON output from the restructuring task as input and apply marking criteria systematically.
+  expected_output: |
+    A simple JSON array of objects, each containing:
+    - "question": The question text (can be truncated for brevity)
+    - "marks_awarded": The marks assigned based on rubric evaluation
+
+    Example Output:
+    ```json
+    [
+      {
+        "question": "1. Which of the following is a renewable resource?",
+        "marks_awarded": 1
+      },
+      {
+        "question": "2. Mention some features of arid soil.",
+        "marks_awarded": 3
+      },
+      {
+        "question": "3. What do you understand by Resource?",
+        "marks_awarded": 0
+      }
+    ]
+    ```
+
+    Marking Guidelines:
+    - Apply {context} consistently for each question type
+    - For MCQs: Full marks for correct answer, zero for incorrect/missing
+    - For descriptive questions: Award marks based on content accuracy, completeness, and key points covered
+    - Consider partial marks where rubrics allow
+    - Be objective and fair in assessment
+    - Return only the final marks without detailed justification
+  agent: marking_agent
+  context: [restructure_answers_task]

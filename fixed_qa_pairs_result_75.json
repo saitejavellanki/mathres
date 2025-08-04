@@ -1,0 +1,50 @@
+[
+  {
+    "result_id": 75,
+    "script_id": 106,
+    "student_name": "K. Sanvi",
+    "student_roll_number": "15",
+    "subject_name": "Mathematics",
+    "class_name": "Class 10",
+    "created_at": "2025-07-31T07:19:32.670Z",
+    "updated_at": "2025-07-31T07:19:32.670Z",
+    "entry_index": 0,
+    "qa_pair_index": 0,
+    "question": "3. Find the quadratic polynomial as the sum and product of its zeroes [1,1].",
+    "answer": "3. Sol: \\[ \\text{The quadratic polynomial can be } ax^2 + bx + c \\] \\[ \\text{are the zeros are } \\alpha, \\beta \\] \\[ \\text{Sum of zeros } = (\\alpha + \\beta) = 1 \\] \\[ \\alpha = 1 \\] \\[ \\beta = 1 \\] \\[ -\\frac{b}{a} = 1 \\] \\[ -b = 1, \\, a = 1 \\] \\[ \\text{(Here } a \\neq 0) \\] \\[ \\text{Product of zeros } = \\alpha \\beta \\] \\[ \\alpha \\beta = 1 \\] \\[ \\frac{c}{a} = 1 \\] \\[ c = 1, \\, a = 1 \\] \\[ \\text{The required for zeros are } ax^2 + bx + c. \\] \\[ ax^2 + bx + c \\] \\[ 1x^2 + bx + c \\] \\[ x^2 + x + c. \\]",
+    "diagram_or_equation": "",
+    "original_question": "content"
+  },
+  {
+    "result_id": 75,
+    "script_id": 106,
+    "student_name": "K. Sanvi",
+    "student_roll_number": "15",
+    "subject_name": "Mathematics",
+    "class_name": "Class 10",
+    "created_at": "2025-07-31T07:19:32.670Z",
+    "updated_at": "2025-07-31T07:19:32.670Z",
+    "entry_index": 0,
+    "qa_pair_index": 1,
+    "question": "1. Prove that \\(\\sqrt{5}\\) is irrational.",
+    "answer": "II. 4. Sol: Let us assume to the contrary that \\(\\sqrt{5}\\) is rational. \\[ \\text{Such that } \\sqrt{5} = \\frac{a}{b} \\] \\[ \\text{Suppose } a \\text{ and } b \\text{ and the common factor other than 1.} \\] \\[ \\text{Then we divided by the } \\sqrt{5} = \\frac{a}{b} \\text{ to get } \\] \\[ \\text{where } a \\text{ and } b \\text{ are coprime.} \\] \\[ \\sqrt{5} = \\frac{a}{b} \\] \\[ \\text{Squaring on both sides:} \\] \\[ (\\sqrt{5})^2 = \\left(\\frac{a}{b}\\right)^2 \\] \\[ 5 = \\frac{a^2}{b^2} \\] \\[ 5b^2 = a^2 \\] \\[ a^2 = 5b^2 \\quad \\rightarrow \\quad (1) \\] \\[ \\text{If 5 divided } a^2 \\text{ to the } 5 \\text{ and the } a \\] \\[ \\text{let } a^2 = 5c^2 \\] \\[ a^2 = 5c^2 \\] \\[ \\text{Squaring on both sides,} \\] \\[ (a)^2 = (5c)^2 \\] \\[ a^2 = 5c^2 \\] \\[ a^2 = 25c^2 \\] \\[ 5b^2 = 25c^2 \\] \\[ b^2 = \\frac{25c^2}{5} \\] \\[ b^2 = 5c^2 \\] \\[ \\text{If 5 divided } b^2 \\text{ to the } \\sqrt{} \\text{ and } (1) \\text{ and } (2) \\] \\[ \\text{on } a \\text{ and } b \\text{ are } \\sqrt{5} \\text{ is rational.} \\] \\[ \\text{But this contradicts that the fact on the } \\] \\[ \\sqrt{5} \\text{ is irrational.} \\] \\[ \\text{So our assumption is wrong.} \\] \\[ \\text{Hence } \\sqrt{5} \\text{ is irrational.} \\]",
+    "diagram_or_equation": "",
+    "original_question": "content"
+  },
+  {
+    "result_id": 75,
+    "script_id": 106,
+    "student_name": "K. Sanvi",
+    "student_roll_number": "15",
+    "subject_name": "Mathematics",
+    "class_name": "Class 10",
+    "created_at": "2025-07-31T07:19:32.670Z",
+    "updated_at": "2025-07-31T07:19:32.670Z",
+    "entry_index": 0,
+    "qa_pair_index": 2,
+    "question": "2. Prove that \\(3 + \\sqrt{215}\\) is irrational.",
+    "answer": "Let us assume to the contrary that \\(3 + 2\\sqrt{5}\\) is rational. \\[ \\text{Such that } 3 + 2\\sqrt{5} = \\frac{a}{b} \\text{ where } a \\text{ and } b \\text{ are coprime.} \\] \\[ 3 + 2\\sqrt{5} = \\frac{a}{b} \\] \\[ 2\\sqrt{5} = \\frac{a - 3b}{b} \\] \\[ \\sqrt{5} = \\frac{a - 2b}{3b} \\] Since \\(3, 2, a\\) and \\(b\\) are integers, \\(a\\) and \\(b\\) have rational \\(\\frac{a - 2b}{3b}\\) is rational. But this contradicts that fact the \\(3 + \\sqrt{5}\\) is irrational. So our assumption is wrong. Hence we conclude that \\(3 + 2\\sqrt{5}\\) is irrational.",
+    "diagram_or_equation": "",
+    "original_question": "content"
+  }
+]
